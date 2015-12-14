@@ -27,7 +27,7 @@ void loop() {
    
    if (verificationTime > 0 && millis() > verificationTime) {
       // alarm system has not been disarmed within 2 seconds
-      Serial.println("open");
+      Serial.println("o");
       verificationTime = 0;
       // buzzer plays 1 seconds 440 Hz tone
       digitalWrite(5, HIGH);
@@ -37,7 +37,7 @@ void loop() {
    if (!boxClosed && (lightSensorVal < lightThreshold)) {
       // box has been closed
       boxClosed = true;
-      Serial.println("closed");
+      Serial.println("c");
       digitalWrite(5, LOW);
       verificationTime = 0;
     }
